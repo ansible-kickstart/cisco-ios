@@ -1,0 +1,10 @@
+---
+- name: ADD USER
+  hosts: all
+  connection: network_cli
+  gather_facts: no
+
+  roles: 
+    - create_new_user
+
+   
