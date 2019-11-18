@@ -1,10 +1,11 @@
 ---
 - name: CONFIGURE CISCO SWITCH PORT
-  hosts: "{{ tower_host_switch }}"
+  hosts: "{{ tower_hosts_switch }}"
   connection: network_cli
   gather_facts: no
 
   vars:
+    tower_hosts_switch: all
     interface_name: GigabitEthernet1/0
     access_vlan: 20
     port_enabled: false
@@ -26,7 +27,7 @@
           ios_interfaces:
             config: 
               - name: "{{ interface_name }}"
-                desription:  'Configured by Ansible'
+                description:  'Configured by Ansible'
                 enabled: true
             state: merged
        when: port_enabled
