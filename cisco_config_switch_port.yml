@@ -39,6 +39,6 @@
             - name: "{{ interface_name }}"
               description: 'Admin down by Ansible'
               enabled: false
-          start: merged
+          state: merged
        when: not port_enabled
 
